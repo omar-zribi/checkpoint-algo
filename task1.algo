@@ -1,0 +1,11 @@
+ALGORITHM Suite
+VAR
+    n:INTEGER;
+    sum,i:INTEGER=0;
+BEGIN
+    Read(n);
+    FOR i FROM 1 TO n STEP 1  DO
+    sum:=sum+i;
+    END_FOR
+    WRITE("the sum=" ,sum);
+END

@@ -1,0 +1,40 @@
+ALGORITHM somme&different
+VAR
+    tab1:ARRAY_OF INTEGER[4];
+    tab2:ARRAY_OF INTEGER[4];
+    i,j,sum:INTEGER=0;
+    duble:BOOLEAN;
+    char1:STRING="";
+    BEGIN
+    Read(tab1);
+    Read(tab2);
+    FOR i FROM 0 TO tab1.Length-1 STEP 1  DO
+    duble:=FALSE;
+    FOR j FROM 0 TO tab2.length-1 STEP 1  DO
+    IF (tab1[i]=tab2[j]) THEN
+    duble:=TRUE;
+    char1:=char1+" "+tab1[i]
+    BREAK 
+    END_FOR
+    IF (duble=FALSE) THEN
+    sum:=sum+tab1[i]
+    END_IF
+    END_IF
+    END_FOR
+    END_FOR
+        FOR j FROM 0 TO tab2.Length-1 STEP 1  DO
+    duble:=FALSE;
+    FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+    IF (tab1[i]=tab2[j]) THEN
+    duble:=TRUE;
+    BREAK 
+    END_FOR
+    IF (duble=FALSE) THEN
+    sum:=sum+tab2[j]
+    END_IF
+    END_IF
+    END_FOR
+    END_FOR
+    Write(sum)
+    Write(char1)
+END

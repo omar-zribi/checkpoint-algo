@@ -1,0 +1,23 @@
+ALGORITHM ChekPoint
+VAR
+    ph:STRING;
+    NbsL:INTEGER=0;
+    NbsW:INTEGER=0;
+    NbsV:INTEGER=0;
+    i,j,k:INTEGER=0;
+BEGIN
+Read(ph);
+    WHILE (ph[i]<>".") DO
+    i+=1;
+    NbsL+=1;
+        IF (ph[j]=" ") THEN
+        NbsW+=1;
+        END_IF
+    IF (ph[k]="a" OR ph[k]="A" OR ph[k]="e" OR ph[k]="E" OR ph[k]="u" OR ph[k]="U" OR ph[k]="I" OR ph[k]="i" OR ph[k]="o" OR ph[k]="O") THEN
+    NbsV+=1;
+    END_IF
+    END_WHILE
+    WRITE("The length of the sentence= ", (NbsL+1));
+    WRITE("The number of words in the sentence= ", (NbsW+1));
+    WRITE("The number of vowels in the sentence= ", NbsV);
+END
